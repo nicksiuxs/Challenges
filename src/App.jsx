@@ -1,10 +1,10 @@
-import './App.css'
+import FirstApp from './components/FirstApp/FirstApp'
 
 function App() {
 
   return (
     <div>
-      <h1>Hello World</h1>
+      <FirstApp />
     </div>
   )
 }
