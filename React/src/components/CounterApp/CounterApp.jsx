@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
+import "./CounterApp.css"
 
 const CounterApp = () => {
     const defaultValue = 0;
@@ -17,17 +18,19 @@ const CounterApp = () => {
     }
 
     return (
-        <div>
-            <h1>{counter}</h1>
-            <button onClick={handleSubsstract}>
-                Subsstract
-            </button>
-            <button onClick={handleReset}>
-                Reset
-            </button>
-            <button onClick={handleAdd}>
-                Add
-            </button>
+        <div className="main">
+            <h1>Counter: {counter}</h1>
+            <div className="buttons">
+                <button onClick={handleSubsstract}>
+                    -
+                </button>
+                <button onClick={handleReset}>
+                    Reset
+                </button>
+                <button onClick={handleAdd}>
+                    +
+                </button>
+            </div>
         </div>
     )
 }

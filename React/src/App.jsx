@@ -5,8 +5,8 @@ function App() {
 
   return (
     <div>
-      <FirstApp title='Titulo prop' sum={20} />
-      {/* <CounterApp /> */}
+      {/* <FirstApp title='Titulo prop' sum={20} /> */}
+      <CounterApp />
     </div>
   )
 }
