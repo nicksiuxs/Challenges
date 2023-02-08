@@ -1,11 +1,23 @@
-import React from 'react'
+import React from 'react';
+import { number, string } from "prop-types";
 
-const FirstApp = () => {
+const FirstApp = ({ title, sum }) => {
     return (
-        <h1>
-            <spa>10</spa>
-        </h1>
+        <>
+            <h1>{title}</h1>
+            <span>{sum}</span>
+        </>
     )
+}
+
+FirstApp.propTypes = {
+    title: string.isRequired,
+    sum: number.isRequired
+}
+
+FirstApp.defaultProps = {
+    title: "No hay título",
+    sum: 20
 }
 
 export default FirstApp
