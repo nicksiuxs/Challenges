@@ -14,12 +14,14 @@ const CounterApp = () => {
     }
 
     const handleAdd = () => {
+        console.log("calling handleAdd")
         setCounter(counter => counter + 1);
     }
 
     return (
         <div className="main">
-            <h1>Counter: {counter}</h1>
+            <h1>Counter</h1>
+            <h2>{counter}</h2>
             <div className="buttons">
                 <button onClick={handleSubsstract}>
                     -
