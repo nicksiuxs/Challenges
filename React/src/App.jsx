@@ -1,4 +1,4 @@
-import CounterApp from "./components/CounterApp/CounterApp"
+import ListApp from "./components/ListApp/ListApp"
 
 
 function App() {
@@ -6,8 +6,8 @@ function App() {
   return (
     <div>
       <h1>Challenges</h1>
-      <h2>CH-03</h2>
-      <CounterApp value={0} />
+      <h2>CH-04</h2>
+      <ListApp />
     </div>
   )
 }
