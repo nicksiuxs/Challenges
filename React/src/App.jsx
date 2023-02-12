@@ -1,4 +1,4 @@
-import ListApp from "./components/ListApp/ListApp"
+import GiftExpertApp from "./components/GiftExpertApp/GiftExpertApp"
 
 
 function App() {
@@ -6,8 +6,8 @@ function App() {
   return (
     <div>
       <h1>Challenges</h1>
-      <h2>CH-04</h2>
-      <ListApp />
+      <h2>CH-05</h2>
+      <GiftExpertApp />
     </div>
   )
 }
