@@ -14,15 +14,15 @@ import GifGrid from './GifGrid';
 const ListApp = () => {
 
 
-    const [categories, setCategories] = useState([]);
+    const [category, setCategory] = useState("");
 
     /**
      * Function to add a category in the array of categories
      * @param {*} event 
      */
-    const onAddCategory = (category) => {
-        if (category != "") {
-            setCategories([...categories, category]);
+    const onAddCategory = (newCategory) => {
+        if (newCategory != "") {
+            setCategory(newCategory);
         }
     }
 
@@ -30,13 +30,7 @@ const ListApp = () => {
         <>
             <h1>Gift expert</h1>
             <AddCategory onAddCategory={onAddCategory} />
-            <ol>
-                {
-                    categories.map((category, key) => {
-                        return <GifGrid key={key} category={category} />
-                    })
-                }
-            </ol>
+            <GifGrid category={category} />
         </>
     )
 }
