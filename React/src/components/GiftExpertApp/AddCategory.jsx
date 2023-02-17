@@ -15,7 +15,7 @@ const AddCategory = ({ onAddCategory }) => {
 
     return (
         <form onSubmit={onSubmit}>
-            <input type="text" placeholder='Agregar' onChange={onInputChange} value={inputValue} />
+            <input type="text" placeholder='Escribe la palabra a buscar' onChange={onInputChange} value={inputValue} />
             <button>Buscar</button>
         </form>
     )

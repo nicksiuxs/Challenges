@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import GifItem from './GifItem';
-import "./GifGrid.css"
 
 const getGifs = async (category) => {
     const key = "3wVMZjfTjzH4LQkopt7xDEeKQyX3PAEt";
