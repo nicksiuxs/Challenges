@@ -1,3 +1,12 @@
+/**
+ * 1. Create a new customHook called useCounter
+ * 2. Implement followed methods to handle counter:
+ *  - Increment
+ *  - Decrement
+ *  - Reset
+ * 3. Use above hook into your current component
+ */
+
 import { useState } from 'react'
 
 const useCounter = ({ initialValue = 0 }) => {
