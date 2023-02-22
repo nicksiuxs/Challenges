@@ -1,13 +1,12 @@
-import GiftExpertApp from "./components/GiftExpertApp/GiftExpertApp"
-
+import CounterApp from "./components/CounterApp/CounterApp"
 
 function App() {
 
   return (
     <div>
       <h1>Challenges</h1>
-      <h2>CH-05</h2>
-      <GiftExpertApp />
+      <h2>CH-06</h2>
+      <CounterApp />
     </div>
   )
 }
