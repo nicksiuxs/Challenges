@@ -5,44 +5,24 @@
  * - Use useState hook to show working buttons into the web.
  */
 import React, { useState } from 'react';
+import useCounter from '../../customHooks/useCounter';
 import "./CounterApp.css"
 
 const CounterApp = ({ value }) => {
-    const [counter, setCounter] = useState(value);
-
-    /**
-     * Function to add one to the counter
-     */
-    const handleAdd = () => {
-        setCounter(counter + 1);
-    }
-
-    /**
-     * Function to subsstract one to the counter
-     */
-    const handleSubsstract = () => {
-        setCounter(counter - 1);
-    }
-
-    /**
-     * Function to reset de counter
-     */
-    const handleReset = () => {
-        setCounter(value);
-    }
+    const { counter, increment, decrement, reset } = useCounter({ initialValue: value })
 
     return (
         <div className="main">
             <h1>Counter</h1>
             <h2>{counter}</h2>
             <div className="buttons">
-                <button onClick={handleSubsstract}>
+                <button onClick={decrement}>
                     -
                 </button>
-                <button onClick={handleReset}>
+                <button onClick={reset}>
                     Reset
                 </button>
-                <button onClick={handleAdd}>
+                <button onClick={increment}>
                     +
                 </button>
             </div>
