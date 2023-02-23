@@ -10,19 +10,19 @@
 import React, { useState } from 'react'
 import AddCategory from './AddCategory';
 import GifGrid from './GifGrid';
+import "./GifExpertApp.css";
 
 const ListApp = () => {
 
-
-    const [category, setCategory] = useState("");
+    const [categories, setCategories] = useState([]);
 
     /**
      * Function to add a category in the array of categories
      * @param {*} event 
      */
-    const onAddCategory = (newCategory) => {
-        if (newCategory != "") {
-            setCategory(newCategory);
+    const onAddCategory = (category) => {
+        if (category != "") {
+            setCategories([...categories, category]);
         }
     }
 
@@ -30,7 +30,16 @@ const ListApp = () => {
         <>
             <h1>Gift expert</h1>
             <AddCategory onAddCategory={onAddCategory} />
-            <GifGrid category={category} />
+
+            <ol>
+                {
+                    categories.map((category, key) => {
+                        return <li key={key}>
+                            <GifGrid category={category} />
+                        </li>
+                    })
+                }
+            </ol>
         </>
     )
 }
