@@ -12,7 +12,7 @@ import AddCategory from './AddCategory';
 import GifGrid from './GifGrid';
 import "./GifExpertApp.css";
 
-const ListApp = () => {
+const GifExpertApp = () => {
 
     const [categories, setCategories] = useState([]);
 
@@ -44,4 +44,4 @@ const ListApp = () => {
     )
 }
 
-export default ListApp
+export default GifExpertApp
