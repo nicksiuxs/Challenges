@@ -1,12 +1,12 @@
-import GifExpertApp from "./components/GiftExpertApp/GiftExpertApp"
+import QuotesApp from "./components/QuotesApp/QuotesApp"
 
 function App() {
 
   return (
     <div>
       <h1>Challenges</h1>
-      <h2>CH-07</h2>
-      <GifExpertApp />
+      <h2>CH-08</h2>
+      <QuotesApp />
     </div>
   )
 }

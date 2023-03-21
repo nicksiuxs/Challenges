@@ -14,3 +14,4 @@ Lista de ramas para los challenges
 - Challenge 05 - rama: [ch-05](https://github.com/nicksiuxs/Challenges/tree/ch-05)
 - Challenge 06 - rama: [ch-06](https://github.com/nicksiuxs/Challenges/tree/ch-06)
 - Challenge 07 - rama: [ch-07](https://github.com/nicksiuxs/Challenges/tree/ch-07)
+- Challenge 08 - rama: [ch-08](https://github.com/nicksiuxs/Challenges/tree/ch-08)
