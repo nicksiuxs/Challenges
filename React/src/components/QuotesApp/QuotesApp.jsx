@@ -17,7 +17,10 @@ const QuotesApp = () => {
                     <div>
                         {
                             data.map((quote, index) => {
-                                return <blockquote key={index}>{quote.quote}</blockquote>
+                                return (<blockquote key={index}>
+                                    <p>{quote.quote}</p>
+                                    <footer>{quote?.author}</footer>
+                                </blockquote>)
                             })
                         }
                     </div>
