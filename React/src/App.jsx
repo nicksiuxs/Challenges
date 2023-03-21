@@ -1,12 +1,11 @@
-import QuotesApp from "./components/QuotesApp/QuotesApp"
+import Memorize from "./components/MemorizeApp/Memorize"
 
 function App() {
 
   return (
     <div>
       <h1>Challenges</h1>
-      <h2>CH-08</h2>
-      <QuotesApp />
+      <Memorize />
     </div>
   )
 }
