@@ -18,3 +18,4 @@ Lista de ramas para los challenges
 - Challenge 09 - rama: [ch-09](https://github.com/nicksiuxs/Challenges/tree/ch-09)
 - Challenge 10 - rama: [ch-10](https://github.com/nicksiuxs/Challenges/tree/ch-10)
 - Challenge 11 - rama: [ch-11](https://github.com/nicksiuxs/Challenges/tree/ch-11)
+- Challenge 12 - rama: [ch-12](https://github.com/nicksiuxs/Challenges/tree/ch-12)
