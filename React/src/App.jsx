@@ -1,13 +1,12 @@
-import Memorize from "./components/MemorizeApp/Memorize"
-import Father from "./components/RerenderApp/Father"
+import TodoApp from "./components/TodoApp/TodoApp"
 
 function App() {
 
   return (
     <div>
       <h1>Challenges</h1>
-      <h2>CH-09</h2>
-      <Father />
+      <h2>CH-10</h2>
+      <TodoApp />
     </div>
   )
 }
