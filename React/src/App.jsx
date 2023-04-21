@@ -1,13 +1,12 @@
-import NavigationApp from "./components/NavigationApp/NavigationApp"
-import TodoApp from "./components/TodoApp/TodoApp"
+import ReduxApp from "./components/ReduxApp/ReduxApp"
 
 function App() {
 
   return (
     <div>
       <h1>Challenges</h1>
-      <h2>CH-13</h2>
-      <NavigationApp />
+      <h2>CH-14</h2>
+      <ReduxApp />
     </div>
   )
 }
