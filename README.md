@@ -20,3 +20,6 @@ Lista de ramas para los challenges
 - Challenge 11 - rama: [ch-11](https://github.com/nicksiuxs/Challenges/tree/ch-11)
 - Challenge 12 - rama: [ch-12](https://github.com/nicksiuxs/Challenges/tree/ch-12)
 - Challenge 13 - rama: [ch-13](https://github.com/nicksiuxs/Challenges/tree/ch-13)
+- Challenge 14 - rama: [ch-14](https://github.com/nicksiuxs/Challenges/tree/ch-14)
+- Challenge 15 - rama: [ch-15](https://github.com/nicksiuxs/Challenges/tree/ch-14)
+- Challenge 16 - rama: [ch-16](https://github.com/nicksiuxs/Challenges/tree/ch-14)
