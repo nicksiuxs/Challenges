@@ -9,8 +9,10 @@ const createUser = (req, res = express.request) => {
 };
 
 const loginUser = (req, res = express.request) => {
+    const { email, password } = req.body;
     res.json({
         ok: true,
+        email
     });
 };
 
