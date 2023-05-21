@@ -1,11 +1,26 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
 
-const { createUser, loginUser, revalidateToken, changePassword } = require("../controllers/auth")
+const { check } = require("express-validator");
+
+const {
+    createUser,
+    loginUser,
+    revalidateToken,
+} = require("../controllers/auth");
+const { validarCampos } = require("../middlewares/validarCampos");
 
 router.post("/", loginUser);
-router.post("/new", createUser);
+router.post(
+    "/new",
+    [
+        check("name", "El nombre es obligatorio").not().isEmpty(),
+        check("email", "El email es obligatiori").isEmail(),
+        check("password", "Es obligatoria").isLength({ min: 6 }),
+        validarCampos
+    ],
+    createUser
+);
 router.get("/renew", revalidateToken);
-router.post("/password", changePassword);
 
-module.exports = router
+module.exports = router;
