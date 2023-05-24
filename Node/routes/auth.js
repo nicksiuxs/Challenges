@@ -9,6 +9,7 @@ const {
     revalidateToken,
 } = require("../controllers/auth");
 const { validarCampos } = require("../middlewares/validarCampos");
+const { validarToken } = require("../middlewares/validarToken");
 
 router.post(
     "/",
@@ -33,9 +34,7 @@ router.post(
 
 router.get(
     "/renew",
-    [
-        check("email", "El email es obligatorio").not().isEmpty()
-    ],
+    validarToken,
     revalidateToken
 );
 

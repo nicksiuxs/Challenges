@@ -1,30 +1,32 @@
 const express = require("express");
 const Usuario = require("../models/Usuario");
 const bcrypt = require("bcryptjs");
+const { generarJWT } = require("../helpers/jwt");
+const { validarToken } = require("../middlewares/validarToken");
 
 const createUser = async (req, res = express.request) => {
     const { name, email, password } = req.body;
 
     try {
-        let usuario = await Usuario.findOne({email:email});
-        if(usuario){
+        let usuario = await Usuario.findOne({ email: email });
+        if (usuario) {
             return res.status(400).json({
                 ok: false,
                 msg: "El usuario ya existe"
             })
         }
-        usuario = new Usuario({name,email,password});
+        usuario = new Usuario({ name, email, password });
         const salt = bcrypt.genSaltSync();
-        usuario.password= bcrypt.hashSync(password,salt);
+        usuario.password = bcrypt.hashSync(password, salt);
         await usuario.save();
         res.status(200).json({
-            ok:true,
+            ok: true,
             usuario
         })
     } catch (error) {
         console.log(error);
         res.status(500).json({
-            ok:false,
+            ok: false,
             error
         })
     }
@@ -34,15 +36,15 @@ const loginUser = async (req, res = express.request) => {
     const { email, password } = req.body;
 
     try {
-        let user = await Usuario.findOne({ email: email });
-        if (!user) {
+        let usuario = await Usuario.findOne({ email: email });
+        if (!usuario) {
             return res.status(400).json({
                 ok: false,
                 msg: "El usuario no existe",
             });
         }
 
-        const passwordValid = bcrypt.compareSync(password, user.password);
+        const passwordValid = bcrypt.compareSync(password, usuario.password);
         if (!passwordValid) {
             return res.status(400).json({
                 ok: false,
@@ -50,9 +52,12 @@ const loginUser = async (req, res = express.request) => {
             });
         }
 
+        const token = await (generarJWT(usuario.id, usuario.name))
+
         res.status(200).json({
             ok: true,
-            user,
+            usuario,
+            token
         });
     } catch (error) {
         console.log(error);
@@ -64,8 +69,11 @@ const loginUser = async (req, res = express.request) => {
 };
 
 const revalidateToken = (req, res = express.request) => {
+    const { uid, name } = req.body
+    const token = validarToken(uid, name);
     res.json({
         ok: true,
+        token
     });
 };
 
