@@ -28,18 +28,39 @@ const createUser = async (req, res = express.request) => {
             error
         })
     }
-    res.status(200).json({
-        ok: true,
-        name, email, password
-    });
 };
 
-const loginUser = (req, res = express.request) => {
+const loginUser = async (req, res = express.request) => {
     const { email, password } = req.body;
-    res.json({
-        ok: true,
-        email
-    });
+
+    try {
+        let user = await Usuario.findOne({ email: email });
+        if (!user) {
+            return res.status(400).json({
+                ok: false,
+                msg: "El usuario no existe",
+            });
+        }
+
+        const passwordValid = bcrypt.compareSync(password, user.password);
+        if (!passwordValid) {
+            return res.status(400).json({
+                ok: false,
+                msg: "La contraseña no es válida",
+            });
+        }
+
+        res.status(200).json({
+            ok: true,
+            user,
+        });
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({
+            ok: false,
+            error,
+        });
+    }
 };
 
 const revalidateToken = (req, res = express.request) => {
