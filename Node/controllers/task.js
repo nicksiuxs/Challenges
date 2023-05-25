@@ -3,7 +3,8 @@ const Tareas = require("../models/Tareas");
 
 const crearTask = async (req, res = express.request) => {
 
-    const task = new Tareas(req.body);
+    const { title } = req.body
+    const task = new Tareas({ title });
 
     try {
         task.user = req.uid;
