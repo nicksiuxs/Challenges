@@ -15,6 +15,7 @@ app.use(express.static("public"));
 
 app.use(bodyParser.json());
 app.use("/api/auth", require("./routes/auth"));
+app.use("/api/task", require("./routes/task"));
 
 app.listen(process.env.PORT, () => {
     console.log("Servidor corriendo en puerto", process.env.PORT);
