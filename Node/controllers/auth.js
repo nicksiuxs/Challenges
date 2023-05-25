@@ -2,7 +2,6 @@ const express = require("express");
 const Usuario = require("../models/Usuario");
 const bcrypt = require("bcryptjs");
 const { generarJWT } = require("../helpers/jwt");
-const { validarToken } = require("../middlewares/validarToken");
 
 const createUser = async (req, res = express.request) => {
     const { name, email, password } = req.body;
@@ -68,17 +67,34 @@ const loginUser = async (req, res = express.request) => {
     }
 };
 
-const revalidateToken = (req, res = express.request) => {
+const revalidateToken = async (req, res = express.request) => {
     const { uid, name } = req.body
-    const token = validarToken(uid, name);
+    const token = await (generarJWT(uid, name));
     res.json({
         ok: true,
         token
     });
 };
 
+const listTask = async (req, res = express.response) => {
+    try {
+        const tareas = await Usuario.find().populate("tareas", "title");
+        return res.status(200).json({
+            ok: true,
+            tareas,
+        });
+    } catch (error) {
+        console.log(error);
+        return res.status(500).json({
+            ok: false,
+            msg: "Error interno",
+        });
+    }
+};
+
 module.exports = {
     createUser,
     loginUser,
     revalidateToken,
+    listTask
 };
